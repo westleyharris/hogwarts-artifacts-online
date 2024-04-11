@@ -83,8 +83,8 @@ public class ArtifactController {
         List<ArtifactDto> artifactDtos = foundArtifacts.stream()
                 .map(this.artifactToArtifactDtoConverter::convert)
                 .collect(Collectors.toList());
-        String artifactSummary = this.artifactService.summarize(artifactDtos);
-        return new Result(true, StatusCode.SUCCESS, "Summarize Success", artifactSummary);
+
+        return new Result(true, StatusCode.SUCCESS, "Summarize Success");
     }
 
     @PostMapping("/search")
